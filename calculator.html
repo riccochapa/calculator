@@ -1,0 +1,202 @@
+<html >
+  <head>
+    <meta charset="UTF-8">
+
+
+    <title>CodePen - +/- Calculator</title>
+
+
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Rock+Salt'>
+
+        <style>
+      body {
+background: black;
+}
+
+#main {
+  text-align: center;
+  width: 100%;
+  background: black;
+}
+
+button {
+font-family: 'Rock Salt', cursive;
+font-size: 33px;
+text-align: center;
+color: red;
+background: black;
+}
+
+#row-one button{
+  text-align: center;
+  padding: 25px;
+  width: 33%;
+}
+
+#row-two button{
+  text-align: center;
+  padding: 25px;
+  width: 33%;
+}
+
+#row-three button{
+  text-align: center;
+  padding: 25px;
+  width: 33%;
+}
+
+#row-four button {
+  text-align: center;
+  padding: 25px;
+  width: 33%;
+}
+
+#equals{
+  text-align: center;
+  padding: 25px;
+  width: 100%;
+  text-align: center;
+}
+    </style>
+
+
+
+
+  </head>
+
+  <body translate="no" >
+
+    <div id="main">
+<div id="row-one">
+<button id="num-1">1</button>
+<button id="num-2">2</button>
+<button id="num-3">3</button>
+<br>
+</div>
+
+<div id="row-two">
+<button id="num-4">4</button>
+<button id="num-5">5</button>
+<button id="num-6">6</button>
+<br>
+</div>
+
+<div id="row-three">
+<button id="num-7">7</button>
+<button id="num-8">8</button>
+<button id="num-9">9</button>
+<br>
+</div>
+<div id="row-four">
+<button id="plus">+</button>
+<button id="num-0">0</button>
+<button id="minus">-</button>
+<br>
+</div>
+<button id="equals">=</button>
+</div>
+
+
+        <script>
+      'use strict';
+
+var stack = [];
+
+var button1 = document.getElementById('num-1');
+button1.onclick = function (e) {
+  stack.push(button1.innerText);
+  console.log(stack);
+};
+
+var button2 = document.getElementById('num-2');
+button2.onclick = function (e) {
+  stack.push(button2.innerText);
+  console.log(stack);
+};
+
+var button3 = document.getElementById('num-3');
+button3.onclick = function (e) {
+  stack.push(button3.innerText);
+  console.log(stack);
+};
+
+var button4 = document.getElementById('num-4');
+button4.onclick = function (e) {
+  stack.push(button4.innerText);
+  console.log(stack);
+};
+
+var button5 = document.getElementById('num-5');
+button5.onclick = function (e) {
+  stack.push(button5.innerText);
+  console.log(stack);
+};
+
+var button6 = document.getElementById('num-6');
+button6.onclick = function (e) {
+  stack.push(button6.innerText);
+  console.log(stack);
+};
+
+var button7 = document.getElementById('num-7');
+button7.onclick = function (e) {
+  stack.push(button7.innerText);
+  console.log(stack);
+};
+
+var button8 = document.getElementById('num-8');
+button8.onclick = function (e) {
+  stack.push(button8.innerText);
+  console.log(stack);
+};
+
+var button9 = document.getElementById('num-9');
+button9.onclick = function (e) {
+  stack.push(button9.innerText);
+  console.log(stack);
+};
+
+var button0 = document.getElementById('num-0');
+button0.onclick = function (e) {
+  stack.push(button0.innerText);
+  console.log(stack);
+};
+
+var plus = document.getElementById('plus');
+plus.onclick = function (e) {
+  stack.push(plus.innerText);
+  console.log(stack);
+};
+
+var minus = document.getElementById('minus');
+minus.onclick = function (e) {
+  stack.push(minus.innerText);
+  console.log(stack);
+};
+
+var equals = document.getElementById('equals');
+equals.onclick = function () {
+
+  var huh = stack.toString();
+  var huh2 = huh.split(/[+-]/).map(function (part) {
+    return part.replace(/,/g, '');
+  });
+
+  var total = Number(huh2[0]) + Number(huh2[1]);
+  var total2 = Number(huh2[0]) - Number(huh2[1]);
+
+  var result = /[+]/.test(huh) ? total : total2;
+  window.alert(result);
+
+  stack = [];
+};
+      //# sourceURL=pen.js
+    </script>
+
+
+
+
+  </body>
+</html>
+ 
